@@ -17,3 +17,14 @@ rules:
   strict:
     - error
     - safe
+  space-infix-ops:
+    - error
+  spaced-comment:
+    - error
+    - always
+  no-multi-spaces:
+    - error
+    - ignoreEOLComments: true
+      exceptions:
+        Property: true
+        VariableDeclarator: true
