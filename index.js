@@ -45,7 +45,11 @@ function findPackageRoot(dir) {
 
 function rel(pth) {
   var dir = getCallerDir();
-  return require(path.join(dir, pth));
+  try {
+    return require(path.join(dir, pth));
+  } catch (e) {
+    throw new Error("Cannot find module '" + pth + "'");
+  }
 }
 
 
