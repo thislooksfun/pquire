@@ -1,9 +1,15 @@
-require_local
-============
+pquire
+======
 
-[![Build Status](https://travis-ci.org/thislooksfun/pquire.svg?branch=master)](https://travis-ci.org/thislooksfun/pquire)
-[![Coverage Status](https://coveralls.io/repos/github/thislooksfun/pquire/badge.svg?branch=master)](https://coveralls.io/github/thislooksfun/pquire?branch=master)
-[![npm](https://img.shields.io/npm/v/pquire.svg)](https://www.npmjs.com/package/pquire)
+[![npm version](https://img.shields.io/npm/v/pquire.svg?style=flat-square)](https://www.npmjs.com/package/pquire)
+[![npm total downloads](https://img.shields.io/npm/dt/pquire.svg?style=flat-square)](https://www.npmjs.com/package/pquire)
+[![npm monthly downloads](https://img.shields.io/npm/dm/pquire.svg?style=flat-square)](https://www.npmjs.com/package/pquire)
+[![License](https://img.shields.io/npm/l/pquire.svg?style=flat-square)](http://opensource.org/licenses/ISC)  
+[![Build status](https://img.shields.io/travis/thislooksfun/pquire/master.svg?style=flat-square)](https://travis-ci.org/thislooksfun/pquire)
+[![Coveralls](https://img.shields.io/coveralls/github/thislooksfun/pquire.svg?style=flat-square)](https://coveralls.io/github/thislooksfun/pquire?branch=master)
+[![Dependency status](https://img.shields.io/david/thislooksfun/pquire.svg?style=flat-square)](https://david-dm.org/thislooksfun/pquire)
+[![DevDependency status](https://img.shields.io/david/dev/thislooksfun/pquire.svg?style=flat-square)](https://david-dm.org/thislooksfun/pquire#info=devDependencies)
+
 
 A simple module for better local requiring
 
