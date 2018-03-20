@@ -1,6 +1,10 @@
 require_local
 ============
 
+[![Build Status](https://travis-ci.org/thislooksfun/pquire.svg?branch=master)](https://travis-ci.org/thislooksfun/pquire)
+[![Coverage Status](https://coveralls.io/repos/github/thislooksfun/pquire/badge.svg?branch=master)](https://coveralls.io/github/thislooksfun/pquire?branch=master)
+[![npm](https://img.shields.io/npm/v/pquire.svg)](https://www.npmjs.com/package/pquire)
+
 A simple module for better local requiring
 
 
