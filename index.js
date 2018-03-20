@@ -2,15 +2,17 @@
 
 var path = require("path");
 
+
 function pquire(pth) {
   
 }
 
-pquire.prototype = {
-  abs: function(pth) {
-    
-  },
-  rel: function(pth) {
-    
-  }
+pquire.abs = function(pth) {
+  
 };
+
+pquire.rel = function(pth) {
+  
+};
+
+module.exports = pquire;

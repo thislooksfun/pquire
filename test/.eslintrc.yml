@@ -1,0 +1,21 @@
+env:
+  mocha: true
+extends: '../.eslintrc.yml'
+globals:
+  expect: true
+# rules:
+#   indent:
+#     - error
+#     - 2
+#   linebreak-style:
+#     - error
+#     - unix
+#   quotes:
+#     - error
+#     - double
+#   semi:
+#     - error
+#     - always
+#   strict:
+#     - error
+#     - safe

@@ -1,2 +1,2 @@
 --recursive
---require ./test/common.coffee
+--require ./test/common.js
