@@ -4,7 +4,7 @@
   "description": "Better requiring within a package",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "nyc mocha $(find test -name '*.test.js')",
     "lint": "eslint .",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
