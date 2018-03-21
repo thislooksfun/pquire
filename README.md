@@ -6,7 +6,7 @@ pquire
 [![npm monthly downloads](https://img.shields.io/npm/dm/pquire.svg?style=flat-square)](https://www.npmjs.com/package/pquire)
 [![License](https://img.shields.io/npm/l/pquire.svg?style=flat-square)](http://opensource.org/licenses/ISC)  
 [![Build status](https://img.shields.io/travis/thislooksfun/pquire/master.svg?style=flat-square)](https://travis-ci.org/thislooksfun/pquire)
-[![Coveralls](https://img.shields.io/coveralls/github/thislooksfun/pquire.svg?style=flat-square)](https://coveralls.io/github/thislooksfun/pquire?branch=master)
+[![Coveralls](https://img.shields.io/coveralls/github/thislooksfun/pquire.svg?style=flat-square)](https://coveralls.io/github/thislooksfun/pquire?branch=master)  
 [![Dependency status](https://img.shields.io/david/thislooksfun/pquire.svg?style=flat-square)](https://david-dm.org/thislooksfun/pquire)
 [![DevDependency status](https://img.shields.io/david/dev/thislooksfun/pquire.svg?style=flat-square)](https://david-dm.org/thislooksfun/pquire#info=devDependencies)
 
