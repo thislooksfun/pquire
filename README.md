@@ -17,7 +17,7 @@ A simple module for better local requiring
 ## Installation
 
 ```
-npm i -S require_local
+npm i -S pquire
 ```
 
 
@@ -55,5 +55,5 @@ const dup2 = pquire.abs("duplicate"); // <root>/duplicate.js
 | Function             | Description                                                                                                             |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------|
 | `pquire(<path>)`     | First tries to require relative to the current file, then, if that fails, requires relative to the package root.        |
-| `pquire.abs(<path>)` | Forces the require path to be relative to the root of the project. This is the same as running `require(./<path>)`      |
+| `pquire.abs(<path>)` | Forces the require path to be relative to the root of the project. |
 | `pquire.rel(<path>)` | Forces the require path to be relative to the path of the current file. This is the same as running `require(./<path>)` |
