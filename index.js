@@ -2,54 +2,31 @@
 
 var path = require("path");
 var fs = require("fs");
-var getCallerDir = require("./lib/getCallerDir");
+var getCallerInfo = require("./lib/getCallerInfo");
+var findPackageRoot = require("./lib/findPackageRoot");
 
 function pquire(pth) {
-  // First require relatively
-  try {
-    return rel(pth);
-  } catch (e) {
-    // console.log(e);
-  /* Ignore error */ }
-  
-  // Then require absolutely
-  try {
-    return abs(pth);
-  } catch (e) {
-    // console.log(e);
-  /* Ignore error */ }
-  
-  // Both failed, time to error
-  throw new Error("Cannot find module '" + pth + "'");
+  var info = getCallerInfo(1);
+  var exactPath = path.join(info.dir, pth);
+  var jsPath = path.join(info.dir, pth + ".js");
+  if (fs.existsSync(exactPath) || fs.existsSync(jsPath)) {
+    return rel(pth, info);
+  } else {
+    return abs(pth, info);
+  }
 }
 
-function abs(pth) {
-  var dir = getCallerDir();
-  var rootDir = findPackageRoot(dir);
+function abs(pth, inf) {
+  var info = inf || getCallerInfo(2);
+  var rootDir = findPackageRoot(info.dir);
   
-  try {
-    return require(path.join(rootDir, pth));
-  } catch (e) {
-    throw new Error("Cannot find module '" + pth + "'");
-  }
-}
-function findPackageRoot(dir) {
-  while (!fs.existsSync(path.join(dir, "package.json"))) {
-    if (dir === "/") {
-      throw new Error("Cannot locate project root");
-    }
-    dir = path.dirname(dir);
-  }
-  return dir;
+  var relToRoot = path.relative(info.dir, rootDir);
+  return require.cache[info.file].require("./" + path.join(relToRoot, pth));
 }
 
-function rel(pth) {
-  var dir = getCallerDir();
-  try {
-    return require(path.join(dir, pth));
-  } catch (e) {
-    throw new Error("Cannot find module '" + pth + "'");
-  }
+function rel(pth, inf) {
+  var info = inf || getCallerInfo(2);
+  return require.cache[info.file].require("./" + path.normalize(pth));
 }
 
 

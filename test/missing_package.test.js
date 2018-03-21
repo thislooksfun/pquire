@@ -17,7 +17,7 @@ describe("missing_package", function() {
     });
     
     it("should fail to load with missing package.json", function() {
-      expect(function() { require(tmpFilePath); }).to.throw(/^Cannot find module 'invalid'$/);
+      expect(function() { require(tmpFilePath); }).to.throw(/^Cannot locate project root$/);
     });
     
     after(function() {
