@@ -1,12 +1,12 @@
 "use strict";
 
-var path = require("path");
-var fs = require("fs");
+// Global imports
+var path          = require("path");
 var getCallerInfo = require("./lib/getCallerInfo");
+// Local imports
 var findPackageRoot = require("./lib/findPackageRoot");
-var ensureType = require("./lib/ensureType");
-
-var pquire = require("./lib/pquire");
+var ensureType      = require("./lib/ensureType");
+var pquire          = require("./lib/pquire");
 
 var shared = pquire();
 
