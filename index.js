@@ -4,34 +4,23 @@ var path = require("path");
 var fs = require("fs");
 var getCallerInfo = require("./lib/getCallerInfo");
 var findPackageRoot = require("./lib/findPackageRoot");
+var ensureType = require("./lib/ensureType");
 
-function pquire(pth) {
-  var info = getCallerInfo(1);
-  var exactPath = path.join(info.dir, pth);
-  var jsPath = path.join(info.dir, pth + ".js");
-  if (fs.existsSync(exactPath) || fs.existsSync(jsPath)) {
-    return rel(pth, info);
-  } else {
-    return abs(pth, info);
-  }
-}
+var pquire = require("./lib/pquire");
 
-function abs(pth, inf) {
-  var info = inf || getCallerInfo(2);
-  var rootDir = findPackageRoot(info.dir);
-  
-  var relToRoot = path.relative(info.dir, rootDir);
-  return require.cache[info.file].require("./" + path.join(relToRoot, pth));
-}
+var shared = pquire();
 
-function rel(pth, inf) {
-  var info = inf || getCallerInfo(2);
-  return require.cache[info.file].require("./" + path.normalize(pth));
-}
+shared.withBaseRelative = function(pth) {
+  ensureType(pth, "string");
+  var callDir = getCallerInfo(1).dir;
+  return pquire(path.join(callDir, pth));
+};
 
+shared.withBaseAbsolute = function(pth) {
+  ensureType(pth, "string");
+  var callDir = getCallerInfo(1).dir;
+  var pkgRt = findPackageRoot(callDir);
+  return pquire(path.join(pkgRt, pth));
+};
 
-// Wrap so getCaller works properly (same depth on all calls)
-pquire.abs = function(pth) { return abs(pth); };
-pquire.rel = function(pth) { return rel(pth); };
-
-module.exports = pquire;
+module.exports = shared;
