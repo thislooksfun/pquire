@@ -8,12 +8,16 @@
     "lint": "eslint .",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
-  "author": "thislooksfun",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/thislooksfun/pquire.git"
   },
+  "author": "thislooksfun",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/thislooksfun/tlf-log/issues"
+  },
+  "homepage": "https://github.com/thislooksfun/tlf-log#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "codecov": "^3.0.0",
