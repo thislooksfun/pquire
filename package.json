@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thislooksfun/pquire.git"
+    "url": "git+https://github.com/thislooksfun/pquire.git"
   },
   "author": "thislooksfun",
   "license": "GPL-3.0",
