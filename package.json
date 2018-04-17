@@ -4,10 +4,11 @@
   "description": "Better requiring within a package",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha $(find test -name '*.test.js')",
     "lint": "eslint .",
+    "test": "nyc mocha $(find test -name '*.test.js')",
+    "check_coverage": "nyc check-coverage --lines 100 --functions 100 --branches 100 --per-file",
     "snyk": "snyk test",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "upload_coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",

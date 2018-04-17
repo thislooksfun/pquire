@@ -11,5 +11,6 @@ script:
   - npm run lint
   - npm run snyk
   - npm test
+  - npm run check_coverage
 after_success:
-  - npm run coverage
+  - npm run upload_coverage
