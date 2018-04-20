@@ -7,6 +7,7 @@
     "lint": "eslint .",
     "test": "nyc mocha $(find test -name '*.test.js')",
     "check_coverage": "nyc check-coverage --lines 100 --functions 100 --branches 100 --per-file",
+    "http_coverage": "nyc report --reporter=html",
     "snyk_test": "snyk test",
     "snyk_monitor": "snyk monitor",
     "upload_coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
